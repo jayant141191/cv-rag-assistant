@@ -2,7 +2,7 @@
 
 ![End-to-end architecture](architecture.svg)
 
-The Streamlit UI starts two paths. The write path (left) parses, chunks and embeds CVs into Chroma. The read path (right) is the LangGraph pipeline in `src/cv_rag/graph.py`. Off-topic questions exit after Analyze, and if no relevant chunks survive a rewrite, the pipeline replies that it found no context. Retry limits are set by `MAX_QUERY_REWRITES` and `MAX_GENERATION_RETRIES` (both default to 1).
+Uploads (Streamlit sidebar or `scripts/ingest.py`) go down the write path (left), which parses, chunks and embeds CVs into Chroma. Questions from the chat, and from `scripts/evaluate.py`, go down the read path (centre): the LangGraph pipeline in `src/cv_rag/graph.py`. If Grade keeps no chunks, the query is rewritten and retrieved again. The right-hand column shows the early exits: off-topic questions stop after Analyze, and if no relevant chunks survive the rewrites, the pipeline replies that it found no context. Retry limits are set by `MAX_QUERY_REWRITES` and `MAX_GENERATION_RETRIES` (both default to 1).
 
 ## System overview
 

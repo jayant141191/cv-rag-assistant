@@ -1,0 +1,19 @@
+# Core RAG stack
+langgraph>=0.4
+langchain-core>=0.3
+langchain-openai>=0.3
+langchain-chroma>=0.2
+langchain-text-splitters>=0.3
+chromadb>=0.5
+
+# App
+streamlit>=1.40
+
+# Parsing & config
+pypdf>=4.0
+python-docx>=1.1
+python-dotenv>=1.0
+pydantic>=2.7
+
+# HTTP: older Brotli breaks httpx2 response decoding (process() keyword error)
+Brotli>=1.2

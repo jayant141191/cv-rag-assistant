@@ -188,7 +188,3 @@ don't commit real CVs.
 - Streaming responses in the UI
 - Structured candidate profiles (years of experience, skills) extracted at ingest for filtering
 - Docker image / Streamlit Community Cloud deployment
-
-## License
-
-MIT — see [LICENSE](LICENSE).
